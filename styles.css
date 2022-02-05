@@ -45,7 +45,7 @@ body {
 
 @media (max-width: 960px) {
 	.mod-list {
-		/*max-height: 180px;*/
+		max-height: 180px;
 		overflow: auto;
 	}
 }
