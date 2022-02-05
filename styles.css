@@ -1,0 +1,149 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	height: 100%;
+}
+
+body {
+	line-height: 1.3;
+	margin: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1.3rem;
+	background: #000 url(https://www.pathofexile.com/image/layout/sota-bg.jpg?1642292290612) no-repeat top center;
+	background-size: contain;
+	min-height: 100%;
+	color: #a38d6d;
+}
+
+.box {
+	background: url(https://www.pathofexile.com/image/profile/frame-top-left.png?1639085844760) no-repeat top left, url(https://www.pathofexile.com/image/profile/frame-top-right.png?1639085844760) no-repeat top right, url(https://www.pathofexile.com/image/profile/frame-bottom-left.png?1639085844760) no-repeat bottom left, url(https://www.pathofexile.com/image/profile/frame-bottom-right.png?1639085844760) no-repeat bottom right, url(https://www.pathofexile.com/image/profile/frame-top.png?1639085844760) repeat-x top, url(https://www.pathofexile.com/image/profile/frame-left.png?1639085844760) repeat-y left, url(https://www.pathofexile.com/image/profile/frame-right.png?1639085844760) repeat-y right, url(https://www.pathofexile.com/image/profile/frame-bottom.png?1639085844760) repeat-x bottom, rgba(0, 0, 0, .76);
+	padding: 1rem;
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: 40% 60%;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 4rem;
+}
+
+@media (max-width: 960px) {
+	.layout {
+		grid-template-columns: 100%;
+	}
+}
+
+.mod-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+@media (max-width: 960px) {
+	.mod-list {
+		max-height: 180px;
+		overflow: auto;
+	}
+}
+
+.mod {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 120px;
+	height: 100px;
+	padding: 0.5rem;
+	border-radius: 8px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: inherit;
+	margin: 0.2em;
+}
+
+.mod-drop {
+	color: #8888ff;
+}
+
+.mod-recipe {
+	color: #ffff77;
+}
+
+.mod-boss {
+	color: #af6025;
+}
+
+.mod:hover, .mod:focus {
+	outline: 1px solid #675541;
+}
+
+.mod-icon {
+	width: 78px;
+}
+
+.mod-tag {
+	text-align: center;
+}
+
+.mod:hover .mod-tag, .mod:focus .mod-tag {
+	font-weight: bold;
+}
+
+.detail-label {
+	font-size: 2rem;
+}
+
+.detail-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.detail-icon {
+	height: 5rem;
+	margin-right: 0.5rem;
+}
+
+.detail-tag {
+	font-size: 3rem;
+}
+
+.detail-section::before {
+	content: '';
+	display: block;
+	width: 80%;
+	height: 1px;
+	margin: 0.5em auto;
+	background: #675541;
+}
+
+.detail-used-in-list {
+	display: flex;
+}
+
+.detail-recipe-container {
+	max-width: 100%;
+	overflow: auto;
+}
+
+.recipe {
+	display: flex;
+	align-items: center;
+}
+
+.recipe:not(:first-child) {
+	border-top: 1px solid #675541;
+}
+
+.recipe-ingredients {
+	display: flex;
+	flex-direction: column;
+}
+
+.recipe-mod {
+	margin: .3em;
+}
