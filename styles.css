@@ -45,7 +45,7 @@ body {
 
 @media (max-width: 960px) {
 	.mod-list {
-		max-height: 180px;
+		/*max-height: 180px;*/
 		overflow: auto;
 	}
 }
@@ -62,23 +62,23 @@ body {
 	background: none;
 	border: none;
 	color: inherit;
-	margin: 0.2em;
-}
-
-.mod-drop {
-	color: #8888ff;
-}
-
-.mod-recipe {
-	color: #ffff77;
-}
-
-.mod-boss {
-	color: #af6025;
+	margin: 0.2rem;
 }
 
 .mod:hover, .mod:focus {
 	outline: 1px solid #675541;
+}
+
+.mod[type="drop"] {
+	color: #8888ff;
+}
+
+.mod[type="recipe"] {
+	color: #ffff77;
+}
+
+.mod[type="boss"] {
+	color: #af6025;
 }
 
 .mod-icon {
@@ -117,7 +117,7 @@ body {
 	display: block;
 	width: 80%;
 	height: 1px;
-	margin: 0.5em auto;
+	margin: 0.5rem auto;
 	background: #675541;
 }
 
@@ -145,5 +145,21 @@ body {
 }
 
 .recipe-mod {
-	margin: .3em;
+	margin: .3rem;
+}
+
+.filters {
+	text-align: right;
+}
+
+.filters button, .filters input {
+	border: 1px solid #2c2c2c;
+	color: #98805e;
+	padding: .2rem .3rem;
+	margin-right: .3rem;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 115%;
+	background-color: #0f0f0f;
+	cursor: pointer;
 }

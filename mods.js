@@ -1,10 +1,12 @@
 window.MODS = {
 	// Drop Mods
 	'Arcane Buffer': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'EnergyShield'
 	},
 	'Berserker': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Rage'
 	},
 	'Bloodletter': {
 		type: 'drop'
@@ -16,67 +18,84 @@ window.MODS = {
 		type: 'drop'
 	},
 	'Chaosweaver': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Voidtouched'
 	},
 	'Consecrator': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Consecration'
 	},
 	'Deadeye': {
 		type: 'drop'
 	},
 	'Dynamo': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Shocker'
 	},
 	'Echoist': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Caster'
 	},
 	'Flameweaver': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Flametouched'
 	},
 	'Frenzied': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Rampage'
 	},
 	'Frostweaver': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Frosttouched'
 	},
 	'Gargantuan': {
 		type: 'drop'
 	},
 	'Hasted': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Speed'
 	},
 	'Incendiary': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Fire'
 	},
 	'Juggernaut': {
 		type: 'drop'
 	},
 	'Malediction': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Oppressor'
 	},
 	'Opulent': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Wealthy'
 	},
 	'Overcharged': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Chargegenerator'
 	},
 	'Permafrost': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Freezer'
 	},
 	'Sentinel': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Defender'
 	},
 	'Soul Conduit': {
 		type: 'drop'
 	},
 	'Steel-Infused': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Steelattuned'
 	},
 	'Stormweaver': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Stormtouched'
 	},
 	'Toxic': {
-		type: 'drop'
+		type: 'drop',
+		iconName: 'Poison'
 	},
 	'Vampiric': {
 		type: 'drop'
@@ -89,7 +108,8 @@ window.MODS = {
 	},
 	'Corpse Detonator': {
 		type: 'recipe',
-		recipe: ['Necromancer', 'Incendiary']
+		recipe: ['Necromancer', 'Incendiary'],
+		iconName: 'Corpseeploder'
 	},
 	'Corrupter': {
 		type: 'recipe',
@@ -97,11 +117,13 @@ window.MODS = {
 	},
 	'Drought Bringer': {
 		type: 'recipe',
-		recipe: ['Malediction', 'Deadeye']
+		recipe: ['Malediction', 'Deadeye'],
+		iconName: 'Flaskdrain'
 	},
 	'Entangler': {
 		type: 'recipe',
-		recipe: ['Toxic', 'Bloodletter']
+		recipe: ['Toxic', 'Bloodletter'],
+		iconName: 'GraspingVines'
 	},
 	'Executioner': {
 		type: 'recipe',
@@ -109,15 +131,18 @@ window.MODS = {
 	},
 	'Flame Strider': {
 		type: 'recipe',
-		recipe: ['Flameweaver', 'Hasted']
+		recipe: ['Flameweaver', 'Hasted'],
+		iconName: 'Fire'
 	},
 	'Frost Strider': {
 		type: 'recipe',
-		recipe: ['Frostweaver', 'Hasted']
+		recipe: ['Frostweaver', 'Hasted'],
+		iconName: 'Frostwalker'
 	},
 	'Heralding Minions': {
 		type: 'recipe',
-		recipe: ['Dynamo', 'Arcane Buffer']
+		recipe: ['Dynamo', 'Arcane Buffer'],
+		iconName: 'Heraldoftheobelisk'
 	},
 	'Hexer': {
 		type: 'recipe',
@@ -125,19 +150,23 @@ window.MODS = {
 	},
 	'Ice Prison': {
 		type: 'recipe',
-		recipe: ['Permafrost', 'Sentinel']
+		recipe: ['Permafrost', 'Sentinel'],
+		iconName: 'Cold'
 	},
 	'Magma Barrier': {
 		type: 'recipe',
-		recipe: ['Incendiary', 'Bonebreaker']
+		recipe: ['Incendiary', 'Bonebreaker'],
+		iconName: 'Volatileflameblood'
 	},
 	'Mana Siphoner': {
 		type: 'recipe',
-		recipe: ['Consecrator', 'Dynamo']
+		recipe: ['Consecrator', 'Dynamo'],
+		iconName: 'ManaDonut'
 	},
 	'Mirror Image': {
 		type: 'recipe',
-		recipe: ['Echoist', 'Soul Conduit']
+		recipe: ['Echoist', 'Soul Conduit'],
+		iconName: 'MirrorImage'
 	},
 	'Necromancer': {
 		type: 'recipe',
@@ -149,31 +178,38 @@ window.MODS = {
 	},
 	'Storm Strider': {
 		type: 'recipe',
-		recipe: ['Stormweaver', 'Hasted']
+		recipe: ['Stormweaver', 'Hasted'],
+		iconName: 'Lightningwalker'
 	},
 	'Crystal-Skinned': {
 		type: 'recipe',
-		recipe: ['Permafrost', 'Rejuvenating', 'Berserker']
+		recipe: ['Permafrost', 'Rejuvenating', 'Berserker'],
+		iconName: 'LivingCrystal'
 	},
 	'Effigy': {
 		type: 'recipe',
-		recipe: ['Hexer', 'Malediction', 'Corrupter']
+		recipe: ['Hexer', 'Malediction', 'Corrupter'],
+		iconName: 'Voodoodoll'
 	},
 	'Empowered Elements ': {
 		type: 'recipe',
-		recipe: ['Evocationist', 'Steel-Infused', 'Chaosweaver']
+		recipe: ['Evocationist', 'Steel-Infused', 'Chaosweaver'],
+		iconName: 'Cycleofelements'
 	},
 	'Empowering Minions': {
 		type: 'recipe',
-		recipe: ['Necromancer', 'Executioner', 'Gargantuan']
+		recipe: ['Necromancer', 'Executioner', 'Gargantuan'],
+		iconName: 'Unionofsouls'
 	},
 	'Evocationist': {
 		type: 'recipe',
-		recipe: ['Flameweaver', 'Frostweaver', 'Stormweaver']
+		recipe: ['Flameweaver', 'Frostweaver', 'Stormweaver'],
+		iconName: 'Prismatic'
 	},
 	'Invulnerable': {
 		type: 'recipe',
-		recipe: ['Sentinel', 'Juggernaut', 'Consecrator']
+		recipe: ['Sentinel', 'Juggernaut', 'Consecrator'],
+		iconName: 'Divinetouched'
 	},
 	'Soul Eater': {
 		type: 'recipe',
@@ -181,11 +217,13 @@ window.MODS = {
 	},
 	'Temporal Bubble': {
 		type: 'recipe',
-		recipe: ['Juggernaut', 'Hexer', 'Arcane Buffer']
+		recipe: ['Juggernaut', 'Hexer', 'Arcane Buffer'],
+		iconName: 'TimeBubble'
 	},
 	'Treant Horde': {
 		type: 'recipe',
-		recipe: ['Toxic', 'Sentinel', 'Steel-Infused']
+		recipe: ['Toxic', 'Sentinel', 'Steel-Infused'],
+		iconName: 'Saplings'
 	},
 	'Trickster': {
 		type: 'recipe',
