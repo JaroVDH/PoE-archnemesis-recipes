@@ -54,8 +54,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 120px;
-	height: 100px;
+	width: 80px;
+	height: 90px;
 	padding: 0.5rem;
 	border-radius: 8px;
 	cursor: pointer;
@@ -82,7 +82,7 @@ body {
 }
 
 .mod-icon {
-	width: 78px;
+	width: 48px;
 }
 
 .mod-tag {
@@ -139,6 +139,11 @@ body {
 	border-top: 1px solid #675541;
 }
 
+.recipe .mod {
+	height: auto;
+	padding: 0;
+}
+
 .recipe-ingredients {
 	display: flex;
 	flex-direction: column;
@@ -156,7 +161,8 @@ body {
 	border: 1px solid #2c2c2c;
 	color: #98805e;
 	padding: .2rem .3rem;
-	margin-right: .3rem;
+	margin-right: .5rem;
+	margin-bottom: .5rem;
 	border-radius: 2px;
 	text-decoration: none;
 	font-size: 115%;
