@@ -28,12 +28,13 @@ body {
 	grid-template-columns: 40% 60%;
 	flex-wrap: wrap;
 	gap: 1rem;
-	margin: 4rem;
+	margin: 2rem;
 }
 
 @media (max-width: 960px) {
 	.layout {
 		grid-template-columns: 100%;
+		margin: 1rem;
 	}
 }
 
@@ -45,7 +46,7 @@ body {
 
 @media (max-width: 960px) {
 	.mod-list {
-		max-height: 180px;
+		max-height: 25vh;
 		overflow: auto;
 	}
 }
@@ -104,12 +105,13 @@ body {
 }
 
 .detail-icon {
-	height: 5rem;
+	height: 3rem;
 	margin-right: 0.5rem;
 }
 
 .detail-tag {
-	font-size: 3rem;
+	font-size: 2.5rem;
+	margin: 1rem 0;
 }
 
 .detail-section::before {
@@ -168,4 +170,30 @@ body {
 	font-size: 115%;
 	background-color: #0f0f0f;
 	cursor: pointer;
+}
+
+.detail-description, .detail-effect {
+	margin-bottom: .4rem;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.detail-description {
+	color: #8888ff;
+}
+
+.detail-effect {
+	color: #a29162;
+}
+
+.detail-rewards {
+	text-align: center;
+}
+
+.reward {
+	margin: 0.4rem;
+}
+
+.reward-icon {
+	height: 3rem;
 }
