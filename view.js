@@ -292,7 +292,7 @@
 			},
 			'Empowered Elements': {
 				'type': 'recipe',
-				'recipe': ['Evocationist', 'Steel-Infused', 'Chaosweaver'],
+				'recipe': ['Evocationist', 'Steel-infused', 'Chaosweaver'],
 				'iconName': 'Cycleofelements',
 				'description': 'Monster cycles between imbued damage of a particular type and immunity to all other damage types',
 				'effect': 'Rewards are rolled 1 additional time, choosing the rarest result',
@@ -334,7 +334,7 @@
 			},
 			'Treant Horde': {
 				'type': 'recipe',
-				'recipe': ['Toxic', 'Sentinel', 'Steel-Infused'],
+				'recipe': ['Toxic', 'Sentinel', 'Steel-infused'],
 				'iconName': 'Saplings',
 				'description': 'Monster\'s minions are replaced with powerful Treants. Some Damage taken from the monster is split between the Treants',
 				'effect': 'Monster\'s Minions drop a randomly-chosen Reward Type',
