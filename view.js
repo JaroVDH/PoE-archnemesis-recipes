@@ -1,4 +1,5 @@
 (function() {
+	let ownedMods = getOwnedMods();
 	const MODS = {
 			'Arcane Buffer': {
 				'type': 'drop',
@@ -422,7 +423,32 @@
 		detailUsedInList = document.querySelector('.detail-used-in-list'),
 		filterDropOnly = document.querySelector('.filter-droponly'),
 		filterRecipeOnly = document.querySelector('.filter-recipeonly'),
+		filterCraftable = document.querySelector('.filter-craftable'),
+		filterSelectOwned = document.querySelector('.filter-select-owned'),
+		filterClearOwned = document.querySelector('.filter-clear-owned'),
 		filterSearch = document.querySelector('.filter-search');
+
+	function getOwnedMods() {
+		const stored = window.localStorage.getItem('owned-mods');
+
+		if (!stored) {
+			return {};
+		}
+
+		return JSON.parse(stored).reduce((agg, mod) => {
+			agg[mod] = true;
+
+			return agg;
+		}, {});
+	}
+
+	function storeOwned() {
+		window.localStorage.setItem('owned-mods', JSON.stringify(
+			Object.entries(ownedMods)
+				.filter(([, v]) => v)
+				.map(([k]) => k)
+		));
+	}
 
 	function escapeRegExp(str) {
 		return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -493,7 +519,7 @@
 		}
 	}
 
-	function buildModItem(mod) {
+	function buildModItem(mod, clickAction = () => showModDetails(mod)) {
 		const container = document.createElement('button'),
 			icon = document.createElement('img'),
 			tag = document.createElement('span');
@@ -510,14 +536,15 @@
 		container.setAttribute('name', mod);
 		container.appendChild(icon);
 		container.appendChild(tag);
-		container.addEventListener('click', () => showModDetails(mod));
+		container.setAttribute('owned', ownedMods[mod] ? 'true': 'false');
+		container.addEventListener('click', clickAction);
 
 		return container;
 	}
 
 	function buildModList() {
 		Object.keys(MODS).forEach((mod) => {
-			modList.appendChild(buildModItem(mod));
+			modList.appendChild(buildModItem(mod, () => onModListClick(mod)));
 		});
 
 		filterDropOnly.addEventListener('click', () => {
@@ -555,6 +582,85 @@
 				el.style.display = searchQuery.test(el.getAttribute('name')) ? '' : 'none';
 			});
 		});
+
+		filterCraftable.addEventListener('click', () => {
+			if (filterCraftable.innerText.includes('Hide')) {
+				filterCraftable.innerText = filterCraftable.innerText.replace('Hide', 'Show');
+			} else {
+				filterCraftable.innerText = filterCraftable.innerText.replace('Show', 'Hide');
+			}
+			updateCraftableFilter();
+		});
+
+		filterSelectOwned.addEventListener('click', () => {
+			if (filterSelectOwned.innerText.includes('Select')) {
+				filterSelectOwned.innerText = filterSelectOwned.innerText.replace('Select', 'Stop selecting');
+				modList.setAttribute('mode', 'owned');
+				filterClearOwned.style.display = '';
+			} else {
+				filterSelectOwned.innerText = filterSelectOwned.innerText.replace('Stop selecting', 'Select');
+				modList.setAttribute('mode', 'details');
+				filterClearOwned.style.display = 'none';
+			}
+		});
+
+		filterClearOwned.addEventListener('click', () => {
+			clearOwned();
+		})
+	}
+
+	function updateCraftableFilter() {
+		if (filterCraftable.innerText.includes('Hide')) {
+			modList.querySelectorAll('.mod').forEach((el) => {
+				el.style.display = el.getAttribute('type') === 'drop' || canCraft(el.getAttribute('name'))
+					? '' : 'none';
+			});
+		} else {
+			modList.querySelectorAll('.mod').forEach((el) => {
+				el.style.display = '';
+			});
+		}
+	}
+
+	function canCraft(mod) {
+		return MODS[mod].recipe?.every((m) => ownedMods[m] || canCraft(m));
+	}
+
+	function onModListClick(mod) {
+		switch (modList.getAttribute('mode')) {
+			case 'owned': {
+				toggleOwned(mod);
+				return;
+			}
+
+			case 'details':
+			default: {
+				showModDetails(mod);
+				return;
+			}
+		}
+	}
+
+	function toggleOwned(mod) {
+		ownedMods[mod] = !ownedMods[mod];
+
+		document.querySelectorAll(`.mod[name="${mod}"]`).forEach((el) => {
+			el.setAttribute('owned', ownedMods[mod] ? 'true': 'false');
+		});
+
+		storeOwned();
+		updateCraftableFilter();
+	}
+
+	function clearOwned() {
+		ownedMods = {};
+
+		document.querySelectorAll('.mod[owned="true"]').forEach((el) => {
+			el.setAttribute('owned', 'false');
+		});
+
+		storeOwned();
+		updateCraftableFilter();
 	}
 
 	function showUsedIn(mod) {
