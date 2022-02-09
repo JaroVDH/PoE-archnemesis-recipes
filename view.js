@@ -623,7 +623,7 @@
 	}
 
 	function canCraft(mod) {
-		return MODS[mod].recipe?.every((m) => ownedMods[m] || canCraft(m));
+		return MODS[mod].recipe && MODS[mod].recipe.every((m) => ownedMods[m] || canCraft(m));
 	}
 
 	function onModListClick(mod) {
